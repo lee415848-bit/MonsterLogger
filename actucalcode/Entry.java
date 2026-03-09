@@ -1,12 +1,13 @@
 package actucalcode;
 
+import java.util.Scanner;
+
 public  class Entry{
 
     private static Entry instance;
     private String monsterType;
 
-    public Entry(String monsterType){
-        this.monsterType = monsterType;
+    public Entry(){
     }
 
     public static Entry getInstance(){
@@ -14,11 +15,13 @@ public  class Entry{
 
     }
 
-    public void makeEntry(String monster){
-        if (monster == "vampire" || monster == "Vampire") {
-            this.monsterType = monster;
-        } 
-        
+    public void makeEntry(){
+         Scanner scanner = new Scanner(System.in);
+         System.out.print("What monster do you want to make an entry for: ");
+        String userInput = scanner.nextLine();
+        this.monsterType = userInput;
+ 
+        scanner.close();
     }
 
     public String getMonsterType(){

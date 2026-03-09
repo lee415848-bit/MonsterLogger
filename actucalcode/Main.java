@@ -6,18 +6,17 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args){
+
+        Scanner scanner = new Scanner(System.in);
         Logger log = Logger.getInstatnce();
+        log.inputName(scanner);
         instantiateLoggerTest();
         getEntryArrayListTest();
-        makeEntryTest();
 
-         Scanner scanner = new Scanner(System.in);
-         System.out.print("Enter a name: ");
-        String userInput = scanner.nextLine(); 
-        log.setName(userInput);
-        System.out.println("Name set to: " + log.getName());
-        scanner.close();
-    }
+
+
+
+        makeEntryTest();   }
         
         
         
@@ -58,7 +57,8 @@ public class Main {
 
     private static void makeEntryTest(){
         Logger log = Logger.getInstatnce();
-        Entry entry = new Entry("vampire");
+        Entry entry = new Entry();
+        entry.makeEntry();
         log.addEntry(entry);
         Entry firstEntry = log.getEntrylist().get(0);
         if (log.getEntrylist()  != null && log.getEntrylist().size() > 0 && firstEntry.getMonsterType() != null) {

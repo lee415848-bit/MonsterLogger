@@ -2,7 +2,6 @@ package actucalcode;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class Logger{
 
 
@@ -16,6 +15,14 @@ public class Logger{
     private Logger(){
 
         entryList = new ArrayList<>();
+        
+    }
+
+    public void inputName(Scanner scanner){
+         System.out.print("Enter a name: ");
+        String userInput = scanner.nextLine(); 
+        setName(userInput);
+        System.out.println("Name set to: " + getName());
     }
     
     public void setName(String name){
